@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -63,3 +63,18 @@ model Token {
 // enum TokenType {
 //   RESET_PASSWORD
 // }
+
+model Project {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  name          String
+  description   String
+  tags          String[]
+  body          String
+  images        String[]
+  license       String   @default("cc-ns-by-sa")
+  draft         Boolean  @default(true)
+  published     Boolean  @default(false)
+  underRevision Boolean  @default(false)
+}
