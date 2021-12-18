@@ -1,19 +1,20 @@
-import { Project } from "@prisma/client"
-import { Link, Routes } from "blitz"
+import type { Project } from "@prisma/client"
+//import { Link, Routes } from "blitz"
 
 interface ProjectPreviewProps {
   project: Project
+  name: string
 }
 
-export const ProjectPreview = ({ project }: ProjectPreviewProps) => (
-  <div key={project.name} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+export const ProjectPreview = ({ project, name }: ProjectPreviewProps) => (
+  <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
     <div className="flex-shrink-0">
       <img
         className="h-48 w-full object-cover"
         src={
           "https://www.googleapis.com/download/storage/v1/b/hackability-web.appspot.com/o/projects%2F0XUTQSgCkQptIfaOI54P%2Fimages%2FByjHCSG5aG3jUjHxOMvW%2FIMG_7438-min@medium.jpg?generation=1563725929822580&alt=media"
         }
-        alt={project.name}
+        alt={name}
       />
     </div>
     <div className="flex-1 bg-white p-6 flex flex-col justify-between">
@@ -22,13 +23,14 @@ export const ProjectPreview = ({ project }: ProjectPreviewProps) => (
           <a href="#" className="hover:underline">
             Category
           </a>
+          <p>{name}</p>
         </p>
-        <Link href={Routes.ShowProjectPage({ projectId: project.id })}>
+        {/*<Link href={Routes.ShowProjectPage({ projectId: project.id })}>
           <a className="block mt-2">
             <p className="text-xl font-semibold text-gray-900">{project.name}</p>
             <p className="mt-3 text-base text-gray-500">{project.description}</p>
           </a>
-        </Link>
+      </Link>*/}
       </div>
       <div className="mt-6 flex items-center">
         {/* <div className="flex-shrink-0">
