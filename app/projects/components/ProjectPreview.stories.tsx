@@ -33,8 +33,9 @@ const Template: ComponentStory<typeof ProjectPreview> = (args) => (
 
 export const Primary = Template.bind({})
 Primary.args = {
-  name: "Nameee",
-  description: "desc",
+  name: "name",
+  description: "description",
+  body: "body",
   variant: "primary",
 }
 
@@ -42,5 +43,6 @@ export const Outline = Template.bind({})
 Outline.args = {
   name: "Nameee",
   description: "desc",
+  body: "body",
   variant: "outline",
 }
