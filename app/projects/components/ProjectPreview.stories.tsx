@@ -1,6 +1,6 @@
 import React from "react"
 import { ComponentStory, ComponentMeta } from "@storybook/react"
-import { ProjectPreview } from "../app/projects/components/ProjectPreview"
+import { ProjectPreview } from "./ProjectPreview"
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
