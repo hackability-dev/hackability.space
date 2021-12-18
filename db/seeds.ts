@@ -374,6 +374,8 @@ const seed = async () => {
     },
   })
   await db.project.createMany({ data })
+  console.log("done")
 }
 
+seed()
 export default seed

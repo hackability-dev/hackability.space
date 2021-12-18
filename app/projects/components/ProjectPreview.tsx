@@ -1,20 +1,12 @@
 import styled from "@emotion/styled"
 import type { Project } from "@prisma/client"
 //import { Link, Routes } from "blitz"
-
-interface ProjectPreviewStyledProps {
-  variant: "primary" | "outline"
-}
-
-const ProjectPreviewStyled = styled.div<ProjectPreviewStyledProps>`
-  outline: ${(props) => (props.variant === "outline" ? "solid blue" : null)};
-  max-width: 24rem;
-`
-
+import { ProjectPreviewStyled, Title, Header, Body } from "./ProjectPriview.styles"
 interface ProjectPreviewProps {
   project: Project
   name: string
   description: string
+  body: string
   variant?: "primary" | "outline"
 }
 
@@ -22,15 +14,16 @@ export const ProjectPreview = ({
   project,
   name,
   description,
+  body,
   variant = "primary",
 }: ProjectPreviewProps) => (
   <ProjectPreviewStyled variant={variant}>
     <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
-      <div>
-        <h3>{name}</h3>
+      <Header>
+        <Title>{name}</Title>
         <p>{description}</p>
-      </div>
-      <div className="flex-shrink-0">
+      </Header>
+      <div className="flex-shrink-0 px-4">
         <img
           className="h-48 w-full object-cover"
           src={
@@ -42,7 +35,10 @@ export const ProjectPreview = ({
       <div className="flex-1 bg-white p-6 flex flex-col justify-between">
         <div className="flex-1">
           <p className="text-sm font-medium text-indigo-600">
-            <a href="#" className="hover:underline">
+            <a
+              href="#"
+              className="hover:underline bg-indigo-200 rounded-full text-indigo-500 text-xs px-2 py-1"
+            >
               Category
             </a>
           </p>
@@ -52,6 +48,7 @@ export const ProjectPreview = ({
             <p className="mt-3 text-base text-gray-500">{project.description}</p>
           </a>
       </Link>*/}
+          <Body>{body}</Body>
         </div>
         <div className="mt-6 flex items-center">
           {/* <div className="flex-shrink-0">
