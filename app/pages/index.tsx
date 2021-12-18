@@ -37,7 +37,12 @@ const Main = () => {
     <main className="h-full bg-blue-500">
       <ProjectsList className="p-10 max-w-7xl m-auto">
         {projects.map((project) => (
-          <ProjectPreview key={project.id} project={project} />
+          <ProjectPreview
+            key={project.id}
+            project={project}
+            description={project.description}
+            name={project.name}
+          />
         ))}
       </ProjectsList>
     </main>
