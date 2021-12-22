@@ -18,7 +18,7 @@ export const ProjectPreview = ({
   variant = "primary",
 }: ProjectPreviewProps) => (
   <ProjectPreviewStyled variant={variant}>
-    <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+    <div className="flex flex-col rounded-lg shadow-lg overflow-hidden bg-white">
       <Header>
         <Title>{name}</Title>
         <p>{description}</p>
